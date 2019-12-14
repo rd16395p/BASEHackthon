@@ -9,26 +9,6 @@ print(data.head())
 data['code'] = pd.Categorical.from_array(data.JobCategory).codes
 print(data['code'].head())
 
-''' Does not work, has low results
-X = data['code'].values.reshape(-1,1)
-y = data['#OfPositions'].values.reshape(-1,1)
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
-
-regressor = LinearRegression()
-regressor.fit(X_train, y_train) #training the algorithm
-
-#To retrieve the intercept:
-print(regressor.intercept_)#For retrieving the slope:
-print(regressor.coef_)
-
-y_pred = regressor.predict(X_train)
-
-df = pd.DataFrame({'Actual': y_train.flatten(), 'Predicted': y_pred.flatten()})
-
-print(df)
-'''
-
 x = data['code'].values.reshape(-1,1)
 y = data['#OfPositions'].values.reshape(-1,1)
 
