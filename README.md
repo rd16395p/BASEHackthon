@@ -1,4 +1,4 @@
-![Mapbox][https://github.com/rd16395p/BASEHackthon/blob/master/Screen%20Shot%202019-12-14%20at%201.15.01%20PM.png]
+![Mapbox](https://github.com/rd16395p/BASEHackthon/blob/master/Screen%20Shot%202019-12-14%20at%201.15.01%20PM.png)
 
 # BASEHackthon
 
