@@ -12,6 +12,8 @@ print(data['code'].head())
 x = data['code'].values.reshape(-1,1)
 y = data['#OfPositions'].values.reshape(-1,1)
 
+#model taken from here 
+
 n = len(x) # Number of data points
 
 X = tf.placeholder("float")
