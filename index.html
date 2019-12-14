@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+      .marker {
+  background-image: url('mapbox-icon.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoicGVyZmVjdHN5bmMiLCJhIjoiY2s0NXJ5ZmZqMGNueTNsbzF6MGJyZXdiaSJ9.PNfSCfxCG2t6_B50D48yOg';
+
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/light-v10',
+  center: [-73, 40],
+  zoom: 7
+});
+
+var geojson = {
+  type: 'FeatureCollection',
+  features: [{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-73.969254,40.682689]
+    },
+    properties: {
+      title: 'REES',
+      description: 'REES is a job center operated by NYCHA where New York residents recieve job training in order to increase their income.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-73.897359, 40.845659]
+    },
+    properties: {
+      title: 'Cortona Job Center',
+      description: 'A place located in the Bronx where free job training is available to ny residents.'
+    }
+   },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-73.935586,40.809722]
+    },
+    properties: {
+      title: 'East end Job center',
+      description: 'Job center which can help you with cash assistance if you are in need, located by 3rd avenue'
+    }
+    },
+    {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-73.897359, 40.845659]
+    },
+    properties: {
+      title: 'Cortona Job Center',
+      description: 'A place located in the Bronx where free job training is available to ny residents.'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-73.981207, 40.687275]
+    },
+    properties: {
+      title: 'New York City Job Center',
+      description: 'Job training for government postitions in NYC'
+    }
+},
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-73.99446242,40.73618037]
+    },
+    properties: {
+      title: 'Waverly Job Center',
+      description: 'A place where residents can recieve job training and cash assistance'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-73.98786666,40.57342821]
+    },
+    properties: {
+      title: 'Coney Island Job Center',
+      description: 'Employment angency in Brooklyn in which residents can recieve training and job oppurtunities'
+    }
+},
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-73.91678513,40.85105297]
+    },
+    properties: {
+      title: 'South Bronx Job Cooperation Center',
+      description: 'Career training that offers participants with campus life, academic skills, and connections with job oppurtunities'
+    }
+},
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-74.01698031,40.70510711]
+    },
+    properties: {
+      title: 'New York City refugee Job Center',
+      description: 'Job training for immigrants'
+    }
+},
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-73.7961254,40.70869547]
+    },
+    properties: {
+      title: 'Jamaica Job Center',
+      description: 'Job training for immigrants'
+    }
+ }]
+
+
+
+};
+
+// add markers to map
+geojson.features.forEach(function(marker) {
+
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    new mapboxgl.Marker(el)
+  .setLngLat(marker.geometry.coordinates)
+  .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+  
+    .addTo(map);
+});
+
+
+
+
+// code from the next step will go here!
+
+</script>
+
+</body>
+</html>
