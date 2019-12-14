@@ -15,3 +15,7 @@ checkdata.py - Data pipeline, takes in the raw data and returns a .csv of the da
 plotdata.ipynb - Juypter Notebook that visualizes prepared data  
 predictionmodel.py - Python file that creates a linear regression for prediction, using tensorflow  
 index.html - Map of training locations where people can learn new skills for the careers found in the dataset  
+
+## Future Work
+
+The app could be expanded to be a full web-app, with a Javascript Front-end, and a mongo backend. 
