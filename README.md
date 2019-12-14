@@ -1,6 +1,7 @@
 # BASEHackthon
 
-Teammembers who coded here
+Rebecca D’Agostino, Naiyu Tian, Sabryna Davis, Lena Pinard  
+
 
 ## Introduction
 
